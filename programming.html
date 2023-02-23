@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming-Certificates</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="image/logo.png" type="image/icon type">
+</head>
+<body>
+    <header>
+        <div class="nav container">
+            <!--navbar leftside part-->
+            <a href="#" class="route">prem._.pk</a>
+            <!--navbar leftside part-->
+
+            <!--navbar-->
+            <ul class="navbar">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#aboutt" class="nav-link">About</a></li>
+                <li><a href="index.html#profiless" class="nav-link">Profiles</a></li>
+                <li><a href="index.html#Skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#certificatess" class="nav-link">Certificates</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <!--navbar-->
+
+            <!--navbar rightside part-->
+            <div class="menu-icon">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <!--navbar rightside part-->
+        </div>
+    </header>
+    <br>
+    <!--certificates section-->
+    <section class="profiles container">
+        <h2 class="heading">Certificates</h2>
+        <div class="webdevelopment-content">
+            <div class="profiles-box rgb">
+                <img src="image/ccourse.jpg" class="webdevelopment-img">
+                <hr style="width: 100%;">
+                <a href="https://bit.ly/3qJHf6C" class="views" target="_blank">View certificate</a>
+            </div>
+            <div class="profiles-box rgb">
+                <img src="image/javaa.jpg" class="webdevelopment-img">
+                <hr style="width: 100%;">
+                <a href="https://bit.ly/3LlROGx" class="views" target="_blank">View certificate</a>
+            </div>
+            <div class="profiles-box rgb">
+                <img src="image/python.jpg" class="webdevelopment-img">
+                <hr style="width: 100%;">
+                <a href="https://bit.ly/3eZS8Pm" class="views" target="_blank">View certificate</a>
+            </div>
+            <div class="profiles-box rgb">
+                <img src="image/git.jpg" class="webdevelopment-img">
+                <hr style="width: 100%;">
+                <a href="https://media.geeksforgeeks.org/courses/certificates/1f1b004d51a982de1fcbe3ac25f4a269.pdf" class="views" target="_blank">View certificate</a>
+            </div>
+        </div>
+    </section>
+    <!--certificates section has been closed-->
+    <script>
+        let header=document.querySelector("header")
+
+window.addEventListener("scroll",()=>
+{
+    header.classList.toggle("header-active",window.scrollY>0)
+});
+let menu=document.querySelector('.menu-icon');
+let navbar=document.querySelector('.navbar');
+
+menu.onclick =() =>
+{
+    navbar.classList.toggle("open-menu")
+    menu.classList.toggle("move")
+}
+window.onscroll=()=>
+{
+    navbar.classList.remove("open-menu");
+    menu.classList.toggle("move");
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,723 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
+* 
+{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+}
+:root 
+{
+    --main-color:#647bff;
+    --body-color:#090a1a;
+    --container-color:#171b3c;
+    --heading-color:#222321;
+    --box-color:#0d0f26;
+    --bg-color:#fff;
+}
+body 
+{
+    color: var(--bg-color);
+    background: var(--body-color);
+
+}
+html::-webkit-scrollbar 
+{
+    width: 0.5rem;
+    background: transparent;
+
+}
+html::-webkit-scrollbar -thumb
+{
+    background: var(--heading-color);
+}
+img{
+    width: 100%;
+}
+section 
+{
+    padding: 3rem 0 2rem;
+}
+a 
+{
+    text-decoration: none;
+}
+li 
+{
+    list-style: none;
+}
+header{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    /* border: 2px solid var(--bg-color); */
+
+}
+.header-active 
+{
+    background:var(--container-color);
+    transition: 0.4s;
+}
+.container 
+{
+    max-width: 960px;
+    margin: auto;
+    width: 100%;
+}
+.nav 
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.route
+{
+    font-size: 1.2rem;
+    font-weight: 650;
+    color: var(--main-color);
+}
+.navbar 
+{
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem; 
+}
+.nav-link 
+{
+    font-size: 0.95rem;
+    padding: 4px 8px;
+    border-radius: 0.2rem;
+    color: var(--bg-color);
+}
+.nav-link:hover 
+{
+    color: var(--main-color);
+    background: var(--container-color);
+    transition: 0.3s all linear; 
+}
+.menu-icon 
+{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5px;
+    cursor: pointer;
+    z-index: 200;
+    transition: 0.3s;
+
+}
+.menu-icon div 
+{
+    display: block;
+    background: var(--bg-color);
+    height: 2px;
+    width: 24px;
+    transition: 0.3s;
+
+}
+.move .line1 
+{
+    transform: rotate(-45deg) translate(-5px,5px);
+
+}
+.move .line2
+{
+    opacity: 0;
+    
+}
+.move .line3 
+{
+    transform: rotate(45deg) translate(-5px,-5px);
+    
+}
+.home 
+{
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 7rem;
+}
+.home-content 
+{
+    position: relative;
+    max-width: 600px;
+    width:100%;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.home-img 
+{
+    width: 190px;
+    height: 190px;
+    border-radius: 80%;
+    background: #98a7fc;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    object-fit: cover;
+    object-position: center;
+}
+.home-innerText
+{
+    padding-top: 5px;
+    line-height: 2;
+}
+.social
+{
+    padding-top: 10px;
+    display: block;
+    align-items: center;
+    
+}
+.social .bx 
+{
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 50%;
+    color: var(--bg-color);
+    background: var(--container-color);
+}
+.social .bx:hover{
+    background: var(--main-color);
+    transition: 0.3s all linear;
+}
+.color
+{
+    color: var(--main-color);
+}
+.heading 
+{
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--bg-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.about-content
+{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:1.5rem;
+}
+.about-data span 
+{
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--main-color);
+}
+.about-data h2
+{
+    font-size: 2rem;
+    line-height: 2.6rem;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+.btn 
+{
+    font-size: 0.97;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 1rem;
+    color:var(--bg-color);
+    background: var(--main-color);
+    padding: 12px 16px;
+    margin-top: 1rem;
+    border-radius: 0.4rem;
+}
+.btn .bx{
+    font-size: 1.2rem;
+}
+.btn:hover
+{
+    background: #546eff;
+    transition: 0.3s all linear;
+
+}
+.about-text
+{
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-align: justify;
+    margin-bottom: 1.5rem;
+
+}
+.profiles-content
+{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:2rem;
+}
+.profiles-box
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    background-color: var(--main-color);
+    border-radius: 0.4rem;
+    transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.profiles-box .bx{
+    font-size: 1.4rem;
+    color: var(--main-color);
+    padding: 10px;
+    border-radius: 5rem;
+    border:2px dashed var(--bg-color)
+}
+.profiles-box:hover
+{
+    transform: scale(1.05);
+    transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.profiles-image
+{
+    width: 190px;
+    height: 190px;
+    border-radius: 80%;   
+}
+.webdevelopment-img
+{
+    width: 400px;
+    height: 250px; 
+}
+.webdevelopment-content
+{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:3rem;
+}
+.views
+{
+    border: 3px solid var(--bg-color);
+    margin-top: 10px;
+    padding: auto;
+    width: 100%;
+    cursor: pointer;
+    text-decoration: none;
+}
+/*skills section*/
+.skill-main 
+{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:2rem;
+}
+.skill-main .skill-bar .info 
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+.skill-bar .bar 
+{
+    width: 100%;
+    height: 10px;
+    position: relative;
+    background-color: var(--bg-color);
+    border-radius: 25px;
+    margin-top: 8px;
+}
+.skill-bar .bar span 
+{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--main-color);
+    border-radius: 25px;
+}
+.skill-bar .bar .html
+{
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--main-color);
+    border-radius: 25px;
+}
+.skill-bar .bar .css
+{
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--main-color);
+    border-radius: 25px;
+}
+.skill-bar .bar .javascript 
+{
+    width: 75%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--main-color);
+    border-radius: 25px;
+}
+.skill-bar .bar .nodejs
+{
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--main-color);
+    border-radius: 25px;
+}
+.skill-bar .bar .reactjs 
+{
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--main-color);
+    border-radius: 25px;
+}
+.skill-bar .bar .mongodb
+{
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--main-color);
+    border-radius: 25px;
+}
+.skill-bar .bar .expressjs 
+{
+    width: 75%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--main-color);
+    border-radius: 25px;
+}
+.skill-bar .bar .python 
+{
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--main-color);
+    border-radius: 25px;
+}
+.Certificates-content
+{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:2rem;
+}
+.Certificates-box
+{
+    position: relative;
+    width:100%;
+    height: 320px;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.certificates-img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.certificates-overlay
+{
+    position: absolute;
+    top:-100%;
+    left:0;
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: hsl(234,45%,16%,0.7);
+}
+.certificates-overlay h2{
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.certificates-overlay .bx{
+    font-size: 24px;
+    padding: 10px;
+    background: var(--main-color);
+    color: var(--bg-color);
+    border-radius: 4px;
+}
+.certificates-overlay .bx:hover{
+    background: #546eff;
+    transition: 0.3s all linear;
+
+}
+.Certificates-box:hover .certificates-overlay
+{
+    top:0;
+    transition: 0.5s all ease-in-out;
+}
+.contact-form
+{
+    max-width: 600px;
+    margin: auto;
+    width: 100%;
+    display: grid;
+    row-gap:1rem;
+}
+.contact-form input,.contact-form textarea
+{
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    padding:15px;
+    color: var(--body-color);
+    background: var(--bg-color);
+    border-radius: 0.4rem;
+
+
+}
+.contact-form .send-btn
+{
+    width:120px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 12px;
+    background: var(--main-color);
+    cursor: pointer;
+}
+.contact-form .send-btn:hover
+{
+    background: #546eff;
+    transition: 0.3s all linear;
+}
+/*testcase*/
+.in {
+    margin-left: 80px;
+    padding: 10px
+}
+
+#bt 
+{
+    margin-bottom: 20px;
+    position: absolute;
+    left: 45%;
+    bottom: 15px;
+}
+
+#bt:hover {
+    background: var(--bg-color);
+    color: var(--body-color);
+    transition: 0.3s all linear;
+}
+/*test case has been completed*/
+.scroll-top
+{
+    position: fixed;
+    bottom:-100%;
+    right:1.5rem;
+
+}
+.scroll-active
+{
+    bottom: 2rem;
+}
+.scroll-top .bx{
+    padding: 8px;
+    font-size: 1.3rem;
+    color: var(--main-color);
+    background: var(--box-color);
+    border-radius: 0.2rem;
+}
+.scroll-top .bx:hover
+{
+    background: var(--container-color);
+    transition: 0.3s all linear;
+    color: var(--bg-color);
+}
+
+/*mobile view mama*/
+@media (max-width:990px)
+{
+    .container
+    {
+        margin: 0 auto;
+        width: 90%;
+    }
+}@media (max-width:892px)
+
+{
+   section
+   {
+     padding: 2rem 0;;
+   }
+   .nav
+   {
+    padding: 12px 0;
+   }
+   .heading
+   {
+      font-size: 4rem;
+   }
+   .Certificates-box
+   {
+    height: 257px;
+   }
+
+}
+@media (max-width:775px)
+{
+    .logo
+    {
+        font-size: 1.1rem;
+    }
+    .home
+    {
+        min-height: 500px;
+        padding-top: 6rem;
+    }
+    .home-innerText h3 
+    {
+        font-size: 1rem;
+    }
+    .home-innerText h2 
+    {
+        font-size:3rem;
+        line-height: 3.8rem;
+    }
+    .home-innerText p 
+    {
+        font-size: 0.825rem;
+    }
+    .profiles-content
+    {
+        grid-template-columns: repeat(2,1fr);
+    }
+    .Certificates-box
+    {
+        height: 245px;
+    }
+    .menu-icon 
+    {
+        display: flex;
+
+    }
+    .navbar 
+    {
+        position: absolute;
+        top:0;
+        right: -100%;
+        width:300px;
+        height: 100vh;
+        background: var(--box-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 20px;
+        transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    .nav-link 
+    {
+        display: block;
+        margin: 1rem 0;
+    }
+    .open-menu 
+    {
+        right: 0;
+        transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+}
+@media (max-width:635px) 
+{
+    .about-content
+    {
+        grid-template-columns: 1fr;
+    }
+    .about-data span 
+    {
+        font-size: 0.9rem;
+    }
+    .about-data h2 
+    {
+        font-size: 1.7rem;
+        line-height: 2.3rem;
+        font-weight: 600;
+        margin: 0.8rem 0;
+    }
+    .about-text p 
+    {
+        font-size: 0.825rem;
+        margin-bottom: 1.3rem;
+    }
+    .Certificates-content
+    {
+        grid-template-columns: repeat(2,200px);
+    }
+}
+@media (max-width:450px)
+{
+    .home 
+    {
+        min-height: 485px;
+        padding-top: 5rem;
+    }
+    .home-img 
+    {
+        width: 140px;
+        height: 140px;
+    }
+    .home-img img 
+    {
+        width: 140px;
+        height: 140px;
+    }
+    .home-innerText h2 
+    {
+        font-size: 2.1rem;
+        line-height: 3.2rem;
+    }
+    .home-innerText p br 
+    {
+        display:contents;
+    }
+    .heading 
+    {
+        font-size: 3rem;
+    }
+    .about-data h2 
+    {
+        font-size: 1.5rem;
+        line-height: 2.1rem;
+        margin: 0.6rem 0;
+    }
+    .profiles-content
+    {
+        grid-template-columns: 1fr;
+    }
+    .Certificates-content
+    {
+        grid-template-columns: 1fr;
+    }
+    .webdevelopment-content 
+    {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width:325px)
+{
+    .navbar
+    {
+        width: 100%;
+    }
+    .Certificates-box 
+    {
+        height: 190px;
+    }
+    .webdevelopment-content 
+    {
+        grid-template-columns: 1fr;
+    }
+}
